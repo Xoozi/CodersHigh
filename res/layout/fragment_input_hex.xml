@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xoozi.codershigh.uicontrol.CalculatorPadLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:columnCount="5"
+    android:rowCount="4">
+
+
+        <Button
+            android:id="@+id/btn_1"
+            style="@style/PadButtonStyle"
+            android:text="1" />
+        <Button
+            android:id="@+id/btn_2"
+            style="@style/PadButtonStyle"
+            android:text="2" />
+        <Button
+            android:id="@+id/btn_3"
+            style="@style/PadButtonStyle"
+            android:text="3" />
+        <Button
+            android:id="@+id/btn_4"
+            style="@style/PadButtonStyle"
+            android:text="4" />
+        <Button
+            android:id="@+id/btn_clear"
+            style="@style/PadButtonStyle"
+            android:text="C" />
+
+
+
+        <Button
+            android:id="@+id/btn_5"
+            style="@style/PadButtonStyle"
+            android:text="5" />
+        <Button
+            android:id="@+id/btn_6"
+            style="@style/PadButtonStyle"
+            android:text="6" />
+        <Button
+            android:id="@+id/btn_7"
+            style="@style/PadButtonStyle"
+            android:text="7" />
+        <Button
+            android:id="@+id/btn_8"
+            style="@style/PadButtonStyle"
+            android:text="8" />
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/PadButtonStyle"
+            android:text="←" />
+
+
+        <Button
+            android:id="@+id/btn_9"
+            style="@style/PadButtonStyle"
+            android:text="9" />
+        <Button
+            android:id="@+id/btn_a"
+            style="@style/PadButtonStyle"
+            android:text="A" />
+        <Button
+            android:id="@+id/btn_b"
+            style="@style/PadButtonStyle"
+            android:text="B" />
+        <Button
+            android:id="@+id/btn_c"
+            style="@style/PadButtonStyle"
+            android:text="C" />
+        <Button
+            style="@style/PadButtonStyle"
+            android:text="" />
+
+
+        <Button
+            android:id="@+id/btn_d"
+            style="@style/PadButtonStyle"
+            android:text="D" />
+        <Button
+            android:id="@+id/btn_e"
+            style="@style/PadButtonStyle"
+            android:text="E" />
+        <Button
+            android:id="@+id/btn_f"
+            style="@style/PadButtonStyle"
+            android:text="F" />
+        <Button
+            android:id="@+id/btn_0"
+            style="@style/PadButtonStyle"
+            android:text="0" />
+        <Button
+            style="@style/PadButtonStyle"
+            android:text="" />
+</com.xoozi.codershigh.uicontrol.CalculatorPadLayout>
