@@ -403,13 +403,20 @@ public class VectorF{
 
 
     /**
-     * 计算叉积 非三维向量的情况无意义
+     * 计算叉积 非三维向量的情况暂不研究
+     * 后续研究将叉积推广到高维可以看:
+     * http://spaces.ac.cn/index.php/archives/2219/
      */
     public VectorF cross(VectorF v) {
         return cross(v, null);
     }
 
 
+    /**
+     * 计算叉积 非三维向量的情况暂不研究
+     * 后续研究将叉积推广到高维可以看:
+     * http://spaces.ac.cn/index.php/archives/2219/
+     */
     public VectorF cross(VectorF v, VectorF target) {
         if(3 != v.dimension ||
                 (null != target &&3 != target.dimension)){
@@ -428,6 +435,11 @@ public class VectorF{
     }
 
 
+    /**
+     * 计算叉积 非三维向量的情况暂不研究
+     * 后续研究将叉积推广到高维可以看:
+     * http://spaces.ac.cn/index.php/archives/2219/
+     */
     public static VectorF cross(VectorF v1, VectorF v2, VectorF target) {
         if(3 != v1.dimension ||
            3 != v2.dimension ||
@@ -446,6 +458,9 @@ public class VectorF{
         return target;
     }
 
+    /**
+     * 归一化
+     */
     public void normalize() {
         float m = norm();
         if (m != 0 && m != 1) {
@@ -454,12 +469,19 @@ public class VectorF{
     }
 
 
+    /**
+     * 归一化
+     */
     public VectorF normalize(VectorF target) {
         float m = norm();
         return mult(this, 1/m, target);
     }
 
 
+    /**
+     * 如果向量的范数大于最大值
+     * 则将其归一化再标乘以该值
+     */
     public void limit(float max) {
         if (normSq() > max*max) {
             normalize();
@@ -468,13 +490,19 @@ public class VectorF{
     }
 
 
-    public void setMag(float len) {
+    /**
+     * 保持原方向设置向量的范数
+     */
+    public void setNorm(float len) {
         normalize();
         mult(len);
     }
 
 
-    public VectorF setMag(VectorF target, float len) {
+    /**
+     * 保持原方向, 设置target向量的范数
+     */
+    public VectorF setNorm(VectorF target, float len) {
         target = normalize(target);
         target.mult(len);
         return target;
@@ -482,6 +510,10 @@ public class VectorF{
 
 
 
+    /**
+     * 在本向量和其他向量v之间, 按系数amt进行线性插值
+     * 结果保存在本向量
+     */
     public void lerp(VectorF v, float amt) {
         if(dimension != v.dimension){
             throw new RuntimeException("lerp with different dimension");
@@ -492,18 +524,29 @@ public class VectorF{
         }
     }
 
+    /**
+     * 在start 和 stop 间 按系数amt进行线性插值
+     */
     public static final float lerp(float start, float stop, float amt) {
         return start + (stop-start) * amt;
     }
 
 
+    /**
+     * 在向量v1和向量v2之间, 按系数amt进行线性插值
+     * 新建一个维度相同的向量来存放结果
+     */
     public static VectorF lerp(VectorF v1, VectorF v2, float amt) {
         VectorF v = v1.copy();
         v.lerp(v2, amt);
         return v;
     }
 
-
+    /**
+     * 在本向量和某标量序列之间, 按系数amt进行线性插值
+     * 标量序列长度必须要等于本向量的维度
+     * 结果保存在本向量
+     */
     public void lerp(float amt, float ...args){
         if(args.length != dimension){
             throw new RuntimeException("lerp with different dimension");
@@ -515,6 +558,9 @@ public class VectorF{
     }
 
 
+    /**
+     * 利用余弦定理来计算两个向量间的夹角
+     */
     public static float angleBetween(VectorF v1, VectorF v2) {
 
         double dot = dot(v1, v2);
@@ -532,6 +578,9 @@ public class VectorF{
     }
 
 
+    /**
+     * 输出字符串
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -548,6 +597,13 @@ public class VectorF{
 
 
 
+    /**
+     * 判断向量相等
+     * 规则比较严格
+     * 非VecotrF对象视为不相等
+     * 维度不同视为不相等
+     * 只要任一分量不同视为不相等
+     */
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof VectorF)) {
@@ -565,6 +621,9 @@ public class VectorF{
     }
 
 
+    /**
+     * 哈希码简易算法
+     */
     @Override
     public int hashCode() {
         int result = 1;

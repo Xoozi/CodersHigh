@@ -1,7 +1,7 @@
 package com.xoozi.codershigh.fragment;
 
 
-import com.xoozi.codershigh.ActivityMain;
+import com.xoozi.codershigh.ActivityDecHex;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -9,12 +9,12 @@ import android.app.FragmentTransaction;
 
 public abstract class FragmentBase extends Fragment{
 
-    protected ActivityMain     _parent;
+    protected ActivityDecHex     _parent;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        _parent = (ActivityMain)activity;
+        _parent = (ActivityDecHex)activity;
     }
 
 

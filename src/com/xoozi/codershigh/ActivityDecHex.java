@@ -8,8 +8,9 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 
-public class ActivityMain extends Activity{
+public class ActivityDecHex extends Activity{
 
     private FragmentDisplay     _fgDisplay;
     private FragmentInputDec    _fgInputDec;
@@ -19,8 +20,19 @@ public class ActivityMain extends Activity{
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dec_hex);
         _initWork();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()){
+            case android.R.id.home:
+                finish();
+            break;
+        }
+        return true;
     }
 
 
