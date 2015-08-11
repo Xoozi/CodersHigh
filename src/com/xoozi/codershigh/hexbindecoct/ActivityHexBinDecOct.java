@@ -1,16 +1,14 @@
-package com.xoozi.codershigh;
+package com.xoozi.codershigh.hexbindecoct;
 
-import com.xoozi.codershigh.fragment.FragmentDisplay;
-import com.xoozi.codershigh.fragment.FragmentInputDec;
-import com.xoozi.codershigh.fragment.FragmentInputHex;
+import com.xoozi.codershigh.ActivityBase;
+import com.xoozi.codershigh.R;
+import com.xoozi.codershigh.hexbindecoct.fragment.FragmentDisplay;
+import com.xoozi.codershigh.hexbindecoct.fragment.FragmentInputDec;
+import com.xoozi.codershigh.hexbindecoct.fragment.FragmentInputHex;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-public class ActivityDecHex extends Activity{
+public class ActivityHexBinDecOct extends ActivityBase{
 
     private FragmentDisplay     _fgDisplay;
     private FragmentInputDec    _fgInputDec;
@@ -23,18 +21,6 @@ public class ActivityDecHex extends Activity{
         setContentView(R.layout.activity_dec_hex);
         _initWork();
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch(item.getItemId()){
-            case android.R.id.home:
-                finish();
-            break;
-        }
-        return true;
-    }
-
 
     /**
      * 交换输入区
@@ -54,12 +40,6 @@ public class ActivityDecHex extends Activity{
 
 
     private void _initWork(){
-        
-        ActionBar actionBar = getActionBar();
-        int flag = ActionBar.DISPLAY_HOME_AS_UP;
-        int change = actionBar.getDisplayOptions() ^ flag;
-        actionBar.setDisplayOptions(change, flag);
-        actionBar.setBackgroundDrawable(new ColorDrawable(0x60009010));
 
         _fgDisplay = new FragmentDisplay();
         _fgDisplay.replaceFg(this, R.id.field_display);

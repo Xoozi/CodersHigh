@@ -5,7 +5,7 @@
 
     <item
         name="Dec Hex"
-        content="com.xoozi.codershigh.ActivityDecHex"
+        content="com.xoozi.codershigh.hexbindecoct.ActivityHexBinDecOct"
         type="activity" />
     
 </item>

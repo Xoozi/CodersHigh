@@ -1,5 +1,7 @@
 package com.xoozi.codershigh.math.linearalgebra;
 
+import com.xoozi.codershigh.utils.Utils;
+
 /**
  * 向量(float) 数据封装
  */

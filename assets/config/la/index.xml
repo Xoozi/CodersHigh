@@ -2,5 +2,10 @@
 <item 
     name="Linear Algebra"
     type="dir" >
+
+    <item
+        name="Vector"
+        content="com.xoozi.codershigh.linearalgebra.ActivityVector"
+        type="activity" />
     
 </item>

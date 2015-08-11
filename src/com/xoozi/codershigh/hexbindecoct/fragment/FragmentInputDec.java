@@ -1,4 +1,4 @@
-package com.xoozi.codershigh.fragment;
+package com.xoozi.codershigh.hexbindecoct.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

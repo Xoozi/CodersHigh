@@ -1,7 +1,8 @@
-package com.xoozi.codershigh.fragment;
+package com.xoozi.codershigh.linearalgebra.fragment;
 
 
-import com.xoozi.codershigh.ActivityDecHex;
+
+import com.xoozi.codershigh.linearalgebra.ActivityVector;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -9,12 +10,12 @@ import android.app.FragmentTransaction;
 
 public abstract class FragmentBase extends Fragment{
 
-    protected ActivityDecHex     _parent;
+    protected ActivityVector     _parent;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        _parent = (ActivityDecHex)activity;
+        _parent = (ActivityVector)activity;
     }
 
 
