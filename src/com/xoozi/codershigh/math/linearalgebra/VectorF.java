@@ -2,6 +2,7 @@ package com.xoozi.codershigh.math.linearalgebra;
 
 import com.xoozi.codershigh.utils.Utils;
 
+
 /**
  * 向量(float) 数据封装
  */
@@ -36,6 +37,7 @@ public class VectorF{
      */
     public VectorF(int dimension, float ...args){
         this(dimension);
+        Utils.amLog("-----vector dimension:"+dimension);
         int argLen = args.length;
         if(argLen > dimension){
             throw new RuntimeException("VectorF component more than it's dimension");
@@ -392,7 +394,7 @@ public class VectorF{
         for(int i = 0; i < dimension; i++){
             sum += get(i) * v.get(i);
         }
-        return (float) Math.sqrt(sum);
+        return sum;
     }
 
 
@@ -593,7 +595,7 @@ public class VectorF{
             if(i < (dimension - 1))
                 sb.append(", ");
         }
-        sb.append("]");
+        sb.append("]'");
         return sb.toString();
     }
 

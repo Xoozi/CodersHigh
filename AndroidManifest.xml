@@ -24,5 +24,8 @@
         <activity android:name=".linearalgebra.ActivityVector"
                 android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".linearalgebra.ActivityEigenvector"
+                android:screenOrientation="portrait">
+        </activity>
     </application>
 </manifest>

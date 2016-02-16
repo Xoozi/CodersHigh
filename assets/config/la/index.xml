@@ -7,5 +7,10 @@
         name="Vector"
         content="com.xoozi.codershigh.linearalgebra.ActivityVector"
         type="activity" />
+
+    <item
+        name="EigenVector"
+        content="com.xoozi.codershigh.linearalgebra.ActivityEigenvector"
+        type="activity" />
     
 </item>

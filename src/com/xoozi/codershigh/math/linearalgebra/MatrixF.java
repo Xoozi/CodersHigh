@@ -147,6 +147,25 @@ public class MatrixF{
     }
 
     /**
+     * 向量左乘矩阵
+     */
+    public VectorF  multVector(VectorF v){
+        if(col != v.dimension){
+            throw new RuntimeException("Can't mult a vector to matrix, with vector's dimension not equals to matrix's col ("
+                    +col+"-"+v.dimension+")");
+        }
+        VectorF ret = new VectorF(row);
+        for(int col_index= 0; col_index < col; col_index ++){
+            VectorF colVec = _colVectors[col_index];
+            float factor = v.get(col_index);
+            for(int row_index = 0; row_index < row; row_index++){
+                ret.set(row_index, ret.get(row_index) + factor * colVec.get(row_index));
+            }
+        }
+        return ret;
+    }
+
+    /**
      * 输出字符串
      */
     @Override
